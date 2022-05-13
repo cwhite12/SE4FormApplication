@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SE4FormApplication.Shapes;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace SE4FormApplication
 {
     public partial class Form1 : Form
     {
+        ArrayList shapes = new ArrayList();
+  
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +33,47 @@ namespace SE4FormApplication
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            String var;
+            var = textBox1.Text;
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(textBox1.Text);
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printPreviewControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+         
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            shapes.Add(new Circle(Color.Purple, 10, 100, 100));
 
         }
     }
