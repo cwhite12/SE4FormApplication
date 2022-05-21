@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace SE4FormApplication
 {
@@ -54,7 +55,7 @@ namespace SE4FormApplication
            
             var = textBox1.Text;
             MessageBox.Show(var);
-            
+           
             return var;
          
         }
@@ -66,9 +67,34 @@ namespace SE4FormApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-           GetTextFromTextBox();
-            button1WasClicked = true;
-        }
+           // GetTextFromTextBox();
+         //   button1WasClicked = true;
+           userCommandBindingSource.EndEdit();
+            UserCommand userCommand = userCommandBindingSource.Current as UserCommand;
+            userCommandBindingSource.AddNew();
+
+            if (userCommand != null)
+                
+            {
+                if (userCommand.isValid)
+                {
+
+                }
+
+
+                //ValidationContext context = new ValidationContext(userCommand, null, null);
+                //IList<ValidationResult> errors = new List<ValidationResult>();
+                //if (!Validator.TryValidateObject(userCommand, context, errors, true))
+                //{
+                //    foreach (ValidationResult result in errors)
+                //    {
+                //        MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        return;
+                //    }
+                }
+            }
+
+        
         public void sendCommand()
         {
             if(button1WasClicked)
@@ -103,6 +129,11 @@ namespace SE4FormApplication
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
