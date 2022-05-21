@@ -52,6 +52,9 @@
             // 
             // textBox1
             // 
+            this.textBox1.AcceptsReturn = true;
+            this.textBox1.AcceptsTab = true;
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.textBox1.Location = new System.Drawing.Point(12, 574);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(577, 20);
@@ -76,6 +79,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Syntax";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
