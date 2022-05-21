@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SE4FormApplication
 {
-    public partial class Form1 : Form
+     partial class Form1 : Form
     {
         ArrayList shapes = new ArrayList();
         String var;

@@ -33,18 +33,17 @@ namespace SE4FormApplication
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commandSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.userCommandBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userCommandBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +107,8 @@ namespace SE4FormApplication
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(548, 111);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(552, 109);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(517, 400);
             this.pictureBox1.TabIndex = 10;
@@ -126,25 +126,12 @@ namespace SE4FormApplication
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.commandSentDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.userCommandBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(378, 615);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(146, 164);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // userCommandBindingSource
-            // 
-            this.userCommandBindingSource.DataSource = typeof(SE4FormApplication.UserCommand);
-            // 
-            // commandSentDataGridViewTextBoxColumn
-            // 
-            this.commandSentDataGridViewTextBoxColumn.DataPropertyName = "commandSent";
-            this.commandSentDataGridViewTextBoxColumn.HeaderText = "Command History";
-            this.commandSentDataGridViewTextBoxColumn.Name = "commandSentDataGridViewTextBoxColumn";
-            this.commandSentDataGridViewTextBoxColumn.Width = 105;
             // 
             // Form1
             // 
@@ -161,10 +148,10 @@ namespace SE4FormApplication
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.userCommandBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userCommandBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
