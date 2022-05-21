@@ -80,7 +80,7 @@ namespace SE4FormApplication
                 {
 
                 }
-
+            
 
                 //ValidationContext context = new ValidationContext(userCommand, null, null);
                 //IList<ValidationResult> errors = new List<ValidationResult>();
@@ -138,14 +138,16 @@ namespace SE4FormApplication
           
             String textFromTextBox = textBox1.Text;
             bool doesItContainValidSyntax = ContainsAny(textFromTextBox, allowedValues);
+
+   
             if (doesItContainValidSyntax)
             {
-             errorProvider.SetError(textBox1, "");  
+                  errorProvider.SetError(textBox1, "");
+              
             }
             else
-            errorProvider.SetError(textBox1, "please enter valid syntax");
-            
-     
+            errorProvider.SetError(textBox1, "Syntax not valid");
+            // throw new Exceptions.SyntaxNotValidException("Syntax is not valid");
             return doesItContainValidSyntax;
   
         }

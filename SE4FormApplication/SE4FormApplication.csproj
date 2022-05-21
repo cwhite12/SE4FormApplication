@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityValidator.cs" />
+    <Compile Include="Exceptions\SyntaxNotValidException.cs" />
     <Compile Include="Shapes\Circle.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

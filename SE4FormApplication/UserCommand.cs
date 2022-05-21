@@ -9,7 +9,8 @@ namespace SE4FormApplication
 {
    public class UserCommand : EntityValidator
     {
-        [Range(1,100)]
+        [Display(Name = "Command Sent")]
+        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
         public String commandSent { get; set; }
  
     }
