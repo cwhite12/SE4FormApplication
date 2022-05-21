@@ -17,7 +17,7 @@ namespace SE4FormApplication
     {
         ArrayList shapes = new ArrayList();
         String var;
-        private bool button1WasClicked = false; 
+        private bool button1WasClicked = false;
         public Form1()
         {
             InitializeComponent();
@@ -40,24 +40,24 @@ namespace SE4FormApplication
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-   
+
 
         }
         public void checkSyntax()
         {
             var = textBox1.Text;
 
-       
+
         }
 
         public String GetTextFromTextBox()
         {
-           
+
             var = textBox1.Text;
             MessageBox.Show(var);
-           
+
             return var;
-         
+
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
@@ -67,14 +67,14 @@ namespace SE4FormApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // GetTextFromTextBox();
-         //   button1WasClicked = true;
-           userCommandBindingSource.EndEdit();
+            // GetTextFromTextBox();
+            //   button1WasClicked = true;
+            userCommandBindingSource.EndEdit();
             UserCommand userCommand = userCommandBindingSource.Current as UserCommand;
             userCommandBindingSource.AddNew();
 
             if (userCommand != null)
-                
+
             {
                 if (userCommand.isValid)
                 {
@@ -91,15 +91,15 @@ namespace SE4FormApplication
                 //        MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //        return;
                 //    }
-                }
             }
+        }
 
-        
+
         public void sendCommand()
         {
-            if(button1WasClicked)
+            if (button1WasClicked)
             {
-              
+
             }
         }
 
@@ -119,7 +119,7 @@ namespace SE4FormApplication
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-         
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -130,7 +130,34 @@ namespace SE4FormApplication
 
         private void button2_Click(object sender, EventArgs e)
         {
+            validateSyntax();
+        }
+        public bool validateSyntax()
+        {
+            String[] allowedValues = { "drawTo", "rect" };
+          
+            String textFromTextBox = textBox1.Text;
+            bool doesItContainValidSyntax = ContainsAny(textFromTextBox, allowedValues);
+            if (doesItContainValidSyntax)
+            {
+             errorProvider.SetError(textBox1, "");  
+            }
+            else
+            errorProvider.SetError(textBox1, "please enter valid syntax");
+            
+     
+            return doesItContainValidSyntax;
+  
+        }
+        public static bool ContainsAny(string textBoxText, params string[] allowedValues)
+        {
+            foreach (string allowed in allowedValues)
+            {
+                if (textBoxText.Contains(allowed))
+                    return true;
+            }
 
+            return false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
