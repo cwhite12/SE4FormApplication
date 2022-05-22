@@ -10,15 +10,15 @@ namespace SE4FormApplication.Shapes
     abstract class Shape
     {
 
-        protected Color colour; //shape's colour
-        protected int x, y; //not I could use c# properties for this
+        protected Color colour; 
+        protected int x, y; 
         public Shape(Color colour, int x, int y)
         {
 
             this.colour = colour; //shape's colour
             this.x = x; //its x pos
             this.y = y; //its y pos
-            //can't provide anything else as "shape" is too general
+            
         }
 
         public abstract void draw(Graphics g); //any derrived class must implement this method
