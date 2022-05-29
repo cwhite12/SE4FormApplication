@@ -148,7 +148,7 @@ namespace SE4FormApplication
         }
         public bool validateSyntax()
         {
-            String[] allowedValues = { "drawTo", "rect" };
+            String[] allowedValues = { "drawTo", "rect","circle" };
 
             String textFromTextBox = textBox1.Text;
             bool doesItContainValidSyntax = ContainsAny(textFromTextBox, allowedValues);
